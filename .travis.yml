@@ -6,7 +6,7 @@ before_before_install:
   - docker build -t timwheeler/react-client -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run -e CI=true timwheeler/react-client npm test -- --watchAll=false
+  - docker run -e CI=true timwheeler/react-client npm run test -- --watchAll=false
 
 after_success:
   - docker build -t timwheeler/multi-client ./client
